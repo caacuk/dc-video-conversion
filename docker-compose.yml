@@ -2,6 +2,7 @@ version: "2"
 services:
   web:
     image: caacuk/video-conversion-app_web:nginx
+    container_name: video-conversion-app_web
     restart: always
     depends_on:
       - redis
