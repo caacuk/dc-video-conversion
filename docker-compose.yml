@@ -1,0 +1,25 @@
+version: "2"
+services:
+  web:
+    image: caacuk/video-conversion-app_web:nginx
+    restart: always
+    depends_on:
+      - redis
+    volumes:
+      - ./appdata:/appdata
+    expose:
+      - 5000
+  worker:
+    image: caacuk/video-conversion-app_worker
+    restart: always
+    depends_on:
+      - redis
+    volumes:
+      - ./appdata:/appdata
+  nginx:
+    image: caacuk/video-conversion-app_nginx
+    restart: always
+    ports:
+      - "80:80"
+  redis:
+    image: redis
