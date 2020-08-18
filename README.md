@@ -12,8 +12,6 @@ If sending another video while in the conversion process, it will carry a new ta
 
 > git clone https://github.com/caacuk/dc-video-conversion.git
 
-> docker-compose build
-
 > docker-compose up
 
 Application will run on port 80
